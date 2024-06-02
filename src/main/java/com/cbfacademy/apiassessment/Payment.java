@@ -3,7 +3,7 @@ package com.cbfacademy.apiassessment;
 import java.math.BigDecimal;
 import java.util.UUID;
 
-//Payment file is uppercase
+
 public class Payment {
 
     private final UUID id;
@@ -11,16 +11,16 @@ public class Payment {
     private BigDecimal balance;
     private String cardNumber;
     private String cardHolderName;
-    private int cvv;
+    private String cvv;
 
-    public Payment(BigDecimal amount, BigDecimal balance, String cardNumber, String cardholderName,
-            int cvv) {
+    public Payment(BigDecimal amount, BigDecimal balance, String cardNumber, String cardHolderName,
+            String cvv) {
 
         this.id = UUID.randomUUID();
         this.amount = amount;
         this.cardNumber = cardNumber;
         this.balance = balance;
-        this.cardHolderName = cardholderName;
+        this.cardHolderName = cardHolderName;
         this.cvv = cvv;
     }
 
@@ -36,23 +36,23 @@ public class Payment {
         this.cardNumber = cardNumber;
     }
 
-    public String getCardNumber(String cardNumber) {
+    public String getCardNumber() {
         return this.cardNumber;
     }
 
-    public void setCardHolderName(String cardholderName) {
-        this.cardHolderName = cardholderName;
+    public void setCardHolderName(String cardHolderName) {
+        this.cardHolderName = cardHolderName;
     }
 
     public String getCardHolderName() {
         return this.cardHolderName;
     }
 
-    public void setCvv(int cvv) {
+    public void setCvv(String cvv) {
         this.cvv = cvv;
     }
 
-    public int getCvv(int cvv) {
+    public String getCvv() {
         return this.cvv;
     }
 
@@ -64,6 +64,4 @@ public class Payment {
         return this.balance;
     }
 
-    public void setId(UUID PaymentIdToDelete) {
-    }
 }

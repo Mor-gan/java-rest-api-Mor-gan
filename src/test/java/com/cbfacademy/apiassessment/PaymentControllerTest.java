@@ -14,9 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
-// import static org.mockito.Mockito.when;
 import java.util.UUID;
-// import java.net.URI;
 
 public class PaymentControllerTest {
 
@@ -30,6 +28,7 @@ public class PaymentControllerTest {
         PaymentController = new PaymentController(listPaymentService);
     }
 
+    @SuppressWarnings("null")
     @Test
     void testGetAllPayments() {
         ResponseEntity<List<Payment>> responseEntity = PaymentController.getAllPayments();
@@ -42,7 +41,7 @@ public class PaymentControllerTest {
     @Test
     void testCreatePayment() throws InsufficientBalanceException {
         Payment newPayment = new Payment(new BigDecimal(200), new BigDecimal(670), "9876 5432 1098 7654", "Jane Doe",
-                456);
+                "456");
 
         ResponseEntity<Payment> responseEntity = PaymentController.processPayment(newPayment);
         assertEquals(HttpStatus.CREATED, responseEntity.getStatusCode());
@@ -50,11 +49,12 @@ public class PaymentControllerTest {
         Payment createdPayment = responseEntity.getBody();
         assertEquals("Jane Doe", createdPayment.getCardHolderName());
     }
-@Test
+
+    @Test
     void testProcessPaymentWithSufficientBalance() {
-  
+
         BigDecimal initialBalance = BigDecimal.valueOf(500.0);
-        Payment createPayment = new Payment(BigDecimal.valueOf(50.0), initialBalance, null, null, 0);
+        Payment createPayment = new Payment(BigDecimal.valueOf(50.0), initialBalance, null, null, "999");
 
         try {
             Payment result = listPaymentService.processPayment(createPayment);
@@ -67,11 +67,11 @@ public class PaymentControllerTest {
         }
     }
 
-@Test
+    @Test
     void testProcessPaymentWithInsufficientBalance() {
-    
+
         BigDecimal initialBalance = BigDecimal.valueOf(50.0);
-        Payment createPayment = new Payment(BigDecimal.valueOf(100.0), initialBalance, null, null, 0);
+        Payment createPayment = new Payment(BigDecimal.valueOf(100.0), initialBalance, null, null, "222");
 
         assertThrows(InsufficientBalanceException.class, () -> {
             listPaymentService.processPayment(createPayment);
@@ -80,7 +80,7 @@ public class PaymentControllerTest {
 
     @Test
     void testCancelPaymentWithInvalidId() {
-    
+
         UUID invalidId = UUID.randomUUID();
 
         boolean isCanceled = listPaymentService.cancelPayment(invalidId);

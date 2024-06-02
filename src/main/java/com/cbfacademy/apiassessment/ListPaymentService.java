@@ -24,11 +24,11 @@ public class ListPaymentService extends PaymentService {
         // Initialze all the instance variable inside a constructor
         this.payments = new ArrayList<>();
         Payment firstPayment = new Payment(new BigDecimal(2000), new BigDecimal(4000), "1141 2922 3338 4744", "Kwame",
-                178);
+                "178");
         Payment secondPayment = new Payment(new BigDecimal(3000), new BigDecimal(3500), "2233 4455 6677 8899", "Alice",
-                279);
+                "279");
         Payment thirdPayment = new Payment(new BigDecimal(3000), new BigDecimal(4500), "9876 5432 1098 7654", "Bob",
-                345);
+                "345");
         payments.add(firstPayment);
         payments.add(secondPayment);
         payments.add(thirdPayment);
@@ -47,7 +47,7 @@ public class ListPaymentService extends PaymentService {
         }
     }
 
-    @Override  
+    @Override
     public List<Payment> getAllPayments() {
         return payments;
     }

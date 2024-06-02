@@ -1,1 +1,30 @@
-[{"id":"e774947d-08c0-4387-b0ea-043030c70992","amount":2000,"balance":4000,"cardHolderName":"Kwame"},{"id":"f10c647e-75db-4418-87c8-a159f1547640","amount":3000,"balance":3500,"cardHolderName":"Alice"},{"id":"b96817fe-c42b-4fd0-9ffb-7277435e8414","amount":3000,"balance":4500,"cardHolderName":"Bob"}]
+[
+    {  
+       "amount": "2000",
+       "balance": "3000",
+       "cardHolderName":"Sammi",
+       "cardNumber": "5000 4444 5555 7776",
+       "cvv": "723"
+   },
+   {
+       "amount": "2580",
+       "balance": "9000",
+       "cardHolderName":"Toyosi",
+       "cardNumber": "5050 4844 5155 7786",
+       "cvv": "123"
+   },
+   {
+       "amount": "8570",
+       "balance": "9000",
+       "cardHolderName":"Ade",
+       "cardNumber": "5050 4844 5155 7786",
+       "cvv": "193"
+   },
+   {
+       "amount": "6070",
+       "balance": "9890",
+       "cardHolderName":"Ademola",
+       "cardNumber": "5990 4194 5950 7785",
+       "cvv": "823"
+   }
+]
