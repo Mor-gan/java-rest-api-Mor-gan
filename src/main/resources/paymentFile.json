@@ -1,0 +1,30 @@
+[
+    {  
+       "amount": "2000",
+       "balance": "3000",
+       "cardHolderName":"Sammi",
+       "cardNumber": "5000 4444 5555 7776",
+       "cvv": "723"
+   },
+   {
+       "amount": "2580",
+       "balance": "9000",
+       "cardHolderName":"Toyosi",
+       "cardNumber": "5050 4844 5155 7786",
+       "cvv": "123"
+   },
+   {
+       "amount": "8570",
+       "balance": "9000",
+       "cardHolderName":"Ade",
+       "cardNumber": "5050 4844 5155 7786",
+       "cvv": "193"
+   },
+   {
+       "amount": "6070",
+       "balance": "9890",
+       "cardHolderName":"Ademola",
+       "cardNumber": "5990 4194 5950 7785",
+       "cvv": "823"
+   }
+]
